@@ -15,8 +15,8 @@ class IndexController extends \Phalcon\Mvc\Controller
     {
         echo "send\n";
 
-        $robots = Users::find();
-        TestEcho::p($robots, FALSE, ['_id', 'name', 'email', 'password']);
+        $user = Users::find();
+        TestEcho::p($user, FALSE, ['_id', 'name', 'email', 'password']);
     }
 
     // ------------------------------------------------------------------------------

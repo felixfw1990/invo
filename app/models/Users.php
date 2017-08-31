@@ -4,8 +4,7 @@ use Phalcon\Mvc\MongoCollection;
 
 class Users extends MongoCollection
 {
-    public $name;
-    public $email;
+    public $username;
     public $password;
 
     public function getSource()

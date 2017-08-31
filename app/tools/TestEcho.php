@@ -19,7 +19,7 @@ class TestEcho
 
                 foreach ($field as $vv)
                 {
-                    $_temp[] = $v[$vv] ?? '';
+                    $_temp[$vv] = $v[$vv] ?? '';
                 }
 
                 $output[] = $_temp;
