@@ -11,6 +11,9 @@ require APP_PATH . "app/config/loader.php";
 require APP_PATH . "app/config/router.php";
 require APP_PATH . "app/config/view.php";
 require APP_PATH . "app/config/mongo.php";
+require APP_PATH . "app/config/dispatcher.php";
+
+
 
 $application = new \Phalcon\Mvc\Application($di);
 

@@ -4,7 +4,18 @@ class TestEcho
 {
     // ------------------------------------------------------------------------------
 
-    public static function p(array $param, $break = FALSE, $field = [])
+    public static function p($param, $break = FALSE)
+    {
+        echo '<pre />';
+
+        print_r($param);
+
+        if ($break) exit;
+    }
+
+    // ------------------------------------------------------------------------------
+
+    public static function pp(array $param, $break = FALSE, $field = [])
     {
         $output = $param;
 

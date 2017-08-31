@@ -13,10 +13,12 @@ class IndexController extends \Phalcon\Mvc\Controller
 
     public function sendAction()
     {
+
+        $ck = $this->request->isPost();
+
+        var_dump($ck);
         echo "send\n";
 
-        $user = Users::find();
-        TestEcho::p($user, FALSE, ['_id', 'name', 'email', 'password']);
     }
 
     // ------------------------------------------------------------------------------
