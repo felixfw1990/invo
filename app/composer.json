@@ -1,0 +1,6 @@
+{
+
+   "require": {
+        "phalcon/incubator": "^3.2"
+    }
+}
