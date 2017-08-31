@@ -60,13 +60,13 @@ class LoginController extends \Phalcon\Mvc\Controller
 
         $where = [];
 
-        $id       AND $where[]['_id']= $this->__mgid($id);
-        $username AND $where[]['username']= $username;
+        $id       AND $where['_id']= $this->__mgid($id);
+        $username AND $where['username']= $username;
 
         if(!$where) { return []; }
 
-        $user = Users::find($where);
-        $user = (array)$user[0] ?? [];
+        $user = Users::findFirst(['conditions' => $where]);
+        $user = (array)$user;
 
         return $user;
     }
