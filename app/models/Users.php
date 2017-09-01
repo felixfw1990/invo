@@ -1,4 +1,4 @@
-<?php
+<?php namespace Invo\Models;
 
 use Phalcon\Mvc\MongoCollection;
 

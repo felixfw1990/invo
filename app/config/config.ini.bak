@@ -1,9 +1,9 @@
-[mongo]
-hostname =
-port     =
-username =
-password =
-database =
+[database]
+mongo.host     =
+mongo.port     =
+mongo.username =
+mongo.password =
+mongo.dbname   =
 
 [application]
 controllersDir = app/controllers/

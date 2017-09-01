@@ -14,7 +14,6 @@ require APP_PATH . "app/config/mongo.php";
 require APP_PATH . "app/config/dispatcher.php";
 
 
-
 $application = new \Phalcon\Mvc\Application($di);
 
 $response = $application->handle();

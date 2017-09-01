@@ -1,4 +1,8 @@
-<?php
+<?php namespace Invo\Controllers;
+
+use Invo\Models\Users;
+use Invo\Tools\TestEcho;
+use MongoDB\BSON\ObjectID;
 
 class LoginController extends \Phalcon\Mvc\Controller
 {
@@ -21,7 +25,6 @@ class LoginController extends \Phalcon\Mvc\Controller
         $users->password = md5($password);
 
         $result = $users->save();
-
 
         TestEcho::p($param);
         TestEcho::p([$result]);
@@ -76,13 +79,13 @@ class LoginController extends \Phalcon\Mvc\Controller
 
     // ------------------------------------------------------------------------------
 
-    private function __mgid($mongo_id = NULL): MongoDB\BSON\ObjectId
+    private function __mgid($mongo_id = NULL): ObjectID
     {
         if (is_string($mongo_id))
         {
-            try { return new MongoDB\BSON\ObjectId($mongo_id); }
+            try { return new ObjectID($mongo_id); }
 
-            catch (Exception $e) { return new MongoDB\BSON\ObjectId(NULL); }
+            catch (\Exception $e) { return new ObjectID(NULL); }
         }
 
         if (is_object($mongo_id))
@@ -90,7 +93,7 @@ class LoginController extends \Phalcon\Mvc\Controller
             return $mongo_id;
         }
 
-        return new MongoDB\BSON\ObjectId(NULL);
+        return new ObjectID(NULL);
     }
     
     // ------------------------------------------------------------------------------

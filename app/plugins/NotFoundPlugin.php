@@ -1,4 +1,4 @@
-<?php
+<?php namespace Invo\Plugins;
 use Phalcon\Events\Event;
 use Phalcon\Mvc\User\Plugin;
 use Phalcon\Mvc\Dispatcher;

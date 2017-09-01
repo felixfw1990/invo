@@ -1,6 +1,8 @@
-<?php
+<?php namespace Invo\Controllers;
 
-class SessionController extends ControllerBase
+use Phalcon\Mvc\Controller;
+
+class SessionController extends Controller
 {
     // ...
 

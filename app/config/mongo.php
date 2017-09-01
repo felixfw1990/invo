@@ -1,25 +1,24 @@
 <?php
-
 use Phalcon\Mvc\Collection\Manager;
 use Phalcon\Db\Adapter\MongoDB\Client;
 
 // Initialise the mongo DB connection.
 $di->setShared('mongo', function () use ($config) {
 
-    if (!$config->mongo->username || !$config->mongo->password) {
-        $dsn = 'mongodb://' . $config->mongo->hostname;
+    if (!$config->database->mongo->username || !$config->database->mongo->password) {
+        $dsn = 'mongodb://' . $config->database->mongo->host;
     } else {
         $dsn = sprintf(
             'mongodb://%s:%s@%s',
-            $config->mongo->username,
-            $config->mongo->password,
-            $config->mongo->hostname
+            $config->database->mongo->username,
+            $config->database->mongo->password,
+            $config->database->mongo->host
         );
     }
 
     $mongo = new Client($dsn);
 
-    return $mongo->selectDatabase($config->mongo->database);
+    return $mongo->selectDatabase($config->database->mongo->dbname);
 });
 
 // Collection Manager is required for MongoDB
